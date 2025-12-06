@@ -1,4 +1,4 @@
-// ✨ 90s Cursor Sparkle Trail (known working) ✨
+//  90s Cursor Sparkle Trail 
 
 document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("mousemove", function (e) {
