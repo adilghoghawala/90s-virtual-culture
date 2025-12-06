@@ -1,6 +1,80 @@
+/* === GLOBAL PAGE STYLE === */
+
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("images/stars-bg.gif"); /* Replace if you have a different background */
+    background-repeat: repeat;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    color: #00ff66;
+    text-shadow: 1px 1px #000;
+}
+
+/* Paragraphs look more readable */
+p {
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* === HEADERS === */
+
+h1 {
+    text-align: center;
+    font-size: 32px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+h2 {
+    font-size: 22px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+/* === NAVIGATION BAR === */
+
+nav {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+nav a {
+    display: inline-block;
+    margin: 0 5px;
+    padding: 6px 10px;
+    font-size: 16px;
+    color: cyan;
+    background: rgba(128, 0, 128, 0.8);
+    border: 2px dotted yellow;
+    text-decoration: none;
+}
+
+nav a:hover {
+    background: red;
+    color: yellow;
+}
+
+/* === MAIN CONTENT BOX === */
+
+.container {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px 30px;
+    background: rgba(0, 0, 0, 0.75);
+    border: 4px dashed magenta;
+    border-radius: 6px;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* === CURSOR SPARKLES (YOUR EXISTING CODE) === */
+
 .sparkle {
     position: absolute;
-    width: 10px;           
+    width: 10px;
     height: 10px;
     border-radius: 50%;
     pointer-events: none;
@@ -22,4 +96,70 @@
         opacity: 0;
         transform: scale(0.4);
     }
+}
+
+/* ------------------------------ */
+/* ✨ NEOPIAN LINK MAGIC ✨ */
+/* ------------------------------ */
+
+/* Default link look — bright Neopets blue */
+a {
+    color: #0077ff;
+    text-decoration: none;
+    position: relative;
+    font-weight: bold;
+}
+
+/* Gold hover color */
+a:hover {
+    color: #ffcc33;
+}
+
+/* Animated underline (slides in from left) */
+a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -3px;
+    width: 0%;
+    height: 2px;
+    background: linear-gradient(90deg, #ff66ff, #66ffff, #ffff66);
+    transition: width 0.3s ease;
+}
+
+a:hover::after {
+    width: 100%;
+}
+
+/* ✨ Sparkle burst on hover — matches your cursor sparkles */
+a:hover {
+    animation: link-sparkle 0.4s ease-out;
+}
+
+@keyframes link-sparkle {
+    0% { text-shadow: 0 0 0px #fff; }
+    50% { text-shadow: 0 0 12px #fff, 0 0 18px #ffcc00; }
+    100% { text-shadow: 0 0 0px #fff; }
+}
+
+/* ------------------------------ */
+/* OPTIONAL: Rainbow Magic Glow Links */
+/* Use class="magic-link" on any <a> */
+/* ------------------------------ */
+
+.magic-link {
+    background: linear-gradient(90deg, #ff66ff, #66ccff, #ffff66);
+    -webkit-background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+
+.magic-link:hover {
+    animation: rainbow-glow 1.5s infinite alternate;
+}
+
+@keyframes rainbow-glow {
+    0% { text-shadow: 0 0 8px #ff66ff; }
+    50% { text-shadow: 0 0 8px #66ccff; }
+    100% { text-shadow: 0 0 8px #ffff66; }
 }
